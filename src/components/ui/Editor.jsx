@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Box, Typography, Tabs, Tab } from '@mui/material';
-import DescriptionIcon from '@mui/icons-material/Description';
+
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+import { EDITOR_JS_TOOLS } from './tools';
+import { createReactEditorJS } from '../helper/editors.js';
+
+
+const ReactEditorJS = createReactEditorJS();
 
 const Editor = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -22,9 +27,7 @@ const Editor = () => {
         mr: 2,
       }}
     >
-     
-     <Box sx={{  p:2, maxWidth: 'fit-content', mx: 2, mb: 1 }}>
-
+      <Box sx={{ p: 2, maxWidth: 'fit-content', mx: 2, mb: 1 }}>
         <Tabs
           value={tabIndex}
           onChange={handleTabChange}
@@ -36,9 +39,8 @@ const Editor = () => {
             '& .MuiTab-root': {
               textTransform: 'none',
               fontWeight: 600,
-             p:1.5,
+              p: 1.5,
               borderRadius: 1,
-              
               minHeight: '32px',
               color: '#475569',
               '&.Mui-selected': {
@@ -87,13 +89,23 @@ const Editor = () => {
           justifyContent: 'center',
           minHeight: 470,
           borderTop: '1px solid #e5e7eb',
+          width: '100%',
         }}
       >
         {tabIndex === 0 && (
-          <>
-            <DescriptionIcon sx={{ fontSize: 40, color: '#94a3b8', mb: 2 }} />
-            <Typography>Generated component code will appear here...</Typography>
-          </>
+          <Box sx={{ width: '100%', backgroundColor: '#fff', p: 2, borderRadius: 2 }}>
+            <ReactEditorJS
+              tools={EDITOR_JS_TOOLS}
+              defaultValue={{
+                time: new Date().getTime(),
+                blocks: [],
+              }}
+              onChange={async (api) => {
+                const data = await api.saver.save();
+                console.log('Editor Data:', data);
+              }}
+            />
+          </Box>
         )}
 
         {tabIndex === 1 && (
