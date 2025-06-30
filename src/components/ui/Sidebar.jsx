@@ -13,12 +13,8 @@ const Sidebar = () => {
     "A product card with image, title, price, and add to cart button",
   ];
 
-  const handleGenerateClick = async () => {
-    try {
-      await openRouterApi(message);
-    } catch (error) {
-      console.error("API call failed:", error);
-    }
+  const buttonClick =() => {
+    openRouterApi(message)
   };
 
   return (
@@ -62,7 +58,7 @@ const Sidebar = () => {
             textTransform: 'none',
             mb: 2,
           }}
-          onClick={handleGenerateClick}
+          onClick={ buttonClick}
         >
           ✨ Generate Component
         </Button>
