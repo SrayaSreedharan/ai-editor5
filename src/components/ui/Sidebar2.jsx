@@ -7,7 +7,16 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 const Sidebar2 = () => {
 
   return (
-    <Paper elevation={2}  sx={{ maxWidth: 500,margin: 'auto',mt: 5,p: 3,borderRadius: 2,}}>
+     <Box px={2} py={4}>
+   <Paper
+           elevation={3}
+           sx={{
+             maxWidth: { xs: '100%', sm: 480 },
+             margin: 'auto',
+             p: { xs: 2, sm: 3 },
+             borderRadius: 2,
+           }}
+         >
 
      <Typography variant="h5" fontWeight="bold" gutterBottom sx={{ display: 'flex', alignItems: 'center' ,color: 'black'}}>
       <SettingsOutlinedIcon/>  Style Options
@@ -69,14 +78,14 @@ const Sidebar2 = () => {
         Quick Themes
       </Typography>
 
-      <Grid container spacing={2} justifyContent="space-between">
+      <Grid container spacing={1} justifyContent="space-between">
         <Grid item xs={5.5}>
           <Button
             variant="contained"
             fullWidth
             sx={{
               backgroundColor: '#dbeafe',
-              width: '200px',
+              width: '180px',
               color: '#1e3a8a',
               textTransform: 'none',
               borderRadius: 2,
@@ -92,7 +101,7 @@ const Sidebar2 = () => {
             variant="contained"
             fullWidth
             sx={{
-              width: '200px',
+              width: '180px',
               backgroundColor: '#f3e8ff',
               color: '#6b21a8',
               textTransform: 'none',
@@ -141,6 +150,7 @@ const Sidebar2 = () => {
       </Grid>
     </Box>
     </Paper>
+    </Box>
   )
 }
 export default Sidebar2

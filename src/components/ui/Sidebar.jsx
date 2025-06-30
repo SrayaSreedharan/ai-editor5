@@ -22,7 +22,7 @@ const Sidebar = () => {
       <Paper
         elevation={3}
         sx={{
-          maxWidth: { xs: '100%', sm: 500 },
+          maxWidth: { xs: '100%', sm: 480 },
           margin: 'auto',
           p: { xs: 2, sm: 3 },
           borderRadius: 2,
