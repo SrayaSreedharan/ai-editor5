@@ -1,6 +1,6 @@
 // pages/Dashboard.jsx
 import React from 'react';
-import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Box} from '@mui/material';
 import Sidebar from '../components/ui/Sidebar';
 import Sidebar2 from '../components/ui/Sidebar2';
 import Editor from '../components/ui/Editor';
@@ -8,8 +8,7 @@ import ButtonAppBar from '../components/ui/Navbar';
 import Footer from '../components/ui/Footer';
 
 const Home = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
 
   return (
     <Box
@@ -59,7 +58,6 @@ const Home = () => {
             width: '100%',
             mt: { xs: 0, md: 5 },
             gap: 2,
-    mt: { xs: 0, md: 2 }
           }}
         >
           <Editor />
