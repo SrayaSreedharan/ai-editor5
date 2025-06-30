@@ -22,7 +22,7 @@ const Editor = () => {
         mr: 2,
       }}
     >
-      {/* Tabs Section */}
+     
      <Box sx={{  maxWidth: 'fit-content', mx: 2, mb: 1 }}>
 
         <Tabs
@@ -76,7 +76,6 @@ const Editor = () => {
         </Tabs>
       </Box>
 
-      {/* Tab Content Area */}
       <Box
         sx={{
           backgroundColor: tabIndex === 0 ? '#0f172a' : '#fff',
