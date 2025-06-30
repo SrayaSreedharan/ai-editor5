@@ -9,7 +9,6 @@ import Footer from '../components/ui/Footer';
 
 const Home = () => {
 
-
   return (
     <Box
       sx={{
@@ -19,10 +18,8 @@ const Home = () => {
         backgroundColor: '#f9fafb',
       }}
     >
-      {/* Top Navbar */}
       <ButtonAppBar />
 
-      {/* Main Content */}
       <Box
         sx={{
           flex: 1,
@@ -31,32 +28,27 @@ const Home = () => {
           px: { xs: 2, md: 3 },
           py: { xs: 2, md: 3 },
           gap: 2,
-    mt: { xs: 0, md: -1 }
+          mt: { xs: 0, md: -1 }
         }}
       >
-        {/* Sidebar Section */}
+
         <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
-        
-    mt: { xs: 0, md: -2},
-           
+            mt: { xs: 0, md: -2},
             width: { xs: '100%',  md: '480px' },
           }}
         >
           <Sidebar />
-            <Sidebar2 />
-       
-
+          <Sidebar2 />
         </Box>
 
-        {/* Editor Section */}
         <Box
           sx={{
             flex: 1,
             width: '100%',
-            mt: { xs: 0, md: 5 },
+            mt: { xs: 0, md: 2 },
             gap: 2,
           }}
         >
@@ -64,10 +56,8 @@ const Home = () => {
         </Box>
       </Box>
 
-      {/* Footer */}
       <Footer />
     </Box>
   );
 };
-
 export default Home;
