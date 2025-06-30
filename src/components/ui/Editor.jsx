@@ -6,7 +6,10 @@ import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import { createReactEditorJS } from '../../helper/editors';
 import { EDITOR_JS_TOOLS } from './tool';
 
+
+
 const ReactEditorJS = createReactEditorJS();
+
 
 const Editor = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -93,6 +96,7 @@ const Editor = () => {
         {tabIndex === 0 && (
           <ReactEditorJS
             tools={EDITOR_JS_TOOLS}
+           
             defaultValue={{
               time: new Date().getTime(),
               blocks: [

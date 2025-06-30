@@ -1,5 +1,4 @@
 const openRouterApi = (message)=>{
-    // console.log(message)
     console.log(process.env.REACT_APP_OPENROUTER_API_KEY,"msg")
 
     fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -20,6 +19,9 @@ const openRouterApi = (message)=>{
         ],
     }),
     });
+     
+
+
 
 
 }
