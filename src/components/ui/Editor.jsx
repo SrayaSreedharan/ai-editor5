@@ -23,7 +23,7 @@ const Editor = () => {
       }}
     >
      
-     <Box sx={{  maxWidth: 'fit-content', mx: 2, mb: 1 }}>
+     <Box sx={{  p:1.5, maxWidth: 'fit-content', mx: 2, mb: 1 }}>
 
         <Tabs
           value={tabIndex}
