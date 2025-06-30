@@ -4,7 +4,7 @@ import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import { createReactEditorJS } from '../../helper/editors';
-import { EDITOR_JS_TOOLS } from './tool';
+import { EDITOR_JS_TOOLS } from './Tool';
 
 
 
