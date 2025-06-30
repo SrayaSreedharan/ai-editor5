@@ -4,8 +4,9 @@ import { Box, Typography, Tabs, Tab } from '@mui/material';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
-import { EDITOR_JS_TOOLS } from './tools';
 import { createReactEditorJS } from '../helper/editors.js';
+import { EDITOR_JS_TOOLS } from './Tools';
+
 
 
 const ReactEditorJS = createReactEditorJS();
