@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Typography, Tabs, Tab } from '@mui/material';
-
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
-import { createReactEditorJS } from '../helper/editors.js';
-import { EDITOR_JS_TOOLS } from './Tools';
-
-
+import { createReactEditorJS } from '../../helper/editors';
+import { EDITOR_JS_TOOLS } from './tool';
 
 const ReactEditorJS = createReactEditorJS();
 
@@ -94,19 +91,22 @@ const Editor = () => {
         }}
       >
         {tabIndex === 0 && (
-          <Box sx={{ width: '100%', backgroundColor: '#fff', p: 2, borderRadius: 2 }}>
-            <ReactEditorJS
-              tools={EDITOR_JS_TOOLS}
-              defaultValue={{
-                time: new Date().getTime(),
-                blocks: [],
-              }}
-              onChange={async (api) => {
-                const data = await api.saver.save();
-                console.log('Editor Data:', data);
-              }}
-            />
-          </Box>
+          <ReactEditorJS
+            tools={EDITOR_JS_TOOLS}
+            defaultValue={{
+              time: new Date().getTime(),
+              blocks: [
+                {
+                  type: 'paragraph',
+                  data: { text: 'Start typing your code or content here...' },
+                },
+              ],
+            }}
+            onChange={async (api) => {
+              const data = await api.saver.save();
+              console.log('Editor Data:', data);
+            }}
+          />
         )}
 
         {tabIndex === 1 && (
