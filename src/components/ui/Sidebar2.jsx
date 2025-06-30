@@ -85,7 +85,7 @@ const Sidebar2 = () => {
       </Typography>
 
       <Grid container spacing={1} justifyContent="space-between">
-        <Grid item span={{ xs: 12, sm: 6 }}>
+        <Grid span={{ xs: 12, sm: 6 }}>
           <Button
             variant="contained"
             fullWidth
@@ -102,7 +102,7 @@ const Sidebar2 = () => {
             Modern Blue
           </Button>
         </Grid>
-       <Grid item span={{ xs: 12, sm: 6 }}>
+       <Grid span={{ xs: 12, sm: 6 }}>
           <Button
             variant="contained"
             fullWidth
@@ -119,7 +119,7 @@ const Sidebar2 = () => {
             Purple Gradient
           </Button>
         </Grid>
-        <Grid item span={{ xs: 12, sm: 6 }}>
+        <Grid span={{ xs: 12, sm: 6 }}>
           <Button
             variant="contained"
             fullWidth
@@ -136,7 +136,7 @@ const Sidebar2 = () => {
             Nature Green
           </Button>
         </Grid>
-        <Grid item span={{ xs: 12, sm: 6 }}>
+        <Grid span={{ xs: 12, sm: 6 }}>
           <Button
             variant="contained"
             fullWidth
