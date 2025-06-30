@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Typography,TextField,Button,Paper, Stack,} from '@mui/material';
+import openRouterApi from '../../helper/openRouterApi';
 
 const Sidebar =() => {
     
@@ -11,8 +12,9 @@ const Sidebar =() => {
           "A hero section with background image and call-to-action",
           "A product card with image, title, price, and add to cart button",]
 
-    const buttonclick =(e)=>{
-        setMessage(e.target.value)
+    const buttonclick =()=>{
+        
+        openRouterApi(message)
     }
   return (
     <Paper elevation={3} sx={{ maxWidth: 500,margin: 'auto',mt: 5,p: 3,borderRadius: 2,}}>
@@ -23,7 +25,8 @@ const Sidebar =() => {
 
       <TextField multiline rows={3} fullWidth placeholder="Describe the react component you want to generate" variant="outlined"sx={{ mb: 2 }} value={message} onChange={(e) => setMessage(e.target.value)}/>
 
-      <Button fullWidth variant="contained" sx={{ background: 'linear-gradient(to right, #4f46e5, #9333ea)',color: 'white',fontWeight: 600,textTransform: 'none',mb: 2,}}onClick={buttonclick}>
+      <Button fullWidth variant="contained" sx={{ background: 'linear-gradient(to right, #4f46e5, #9333ea)',color: 'white',fontWeight: 600,textTransform: 'none',mb: 2,}} 
+      onClick={buttonclick}>
         ✨ Generate Component
       </Button>
 
