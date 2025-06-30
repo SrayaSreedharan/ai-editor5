@@ -7,7 +7,7 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 const Sidebar2 = () => {
 
   return (
-     <Box px={2} py={4}>
+     <Box px={2} py={4} >
    <Paper
            elevation={3}
            sx={{
@@ -119,7 +119,7 @@ const Sidebar2 = () => {
             fullWidth
             sx={{
               backgroundColor: '#dcfce7',
-              width: '200px',
+              width: '180px',
               color: '#166534',
               textTransform: 'none',
               borderRadius: 2,
@@ -135,7 +135,7 @@ const Sidebar2 = () => {
             variant="contained"
             fullWidth
             sx={{
-              width: '200px',
+              width: '180px',
               backgroundColor: '#f3f4f6',
               color: '#374151',
               textTransform: 'none',

@@ -18,29 +18,33 @@ const Editor = () => {
         borderRadius: 2,
         overflow: 'hidden',
         boxShadow: '0 0 0 1px #e5e7eb',
-        backgroundColor: '#f9fafb', 
-     mr:2}}
+        backgroundColor: '#f9fafb',
+        mr: 2,
+      }}
     >
-      
-      <Box sx={{ backgroundColor: '#fff', px: 2, pt: 2 }}>
+      {/* Tabs Section */}
+     <Box sx={{  maxWidth: 'fit-content', mx: 2, mb: 1 }}>
+
         <Tabs
           value={tabIndex}
           onChange={handleTabChange}
           TabIndicatorProps={{ style: { display: 'none' } }}
           sx={{
+            backgroundColor: '#e5e7eb',
+            borderRadius: 2,
+            p: 0.5,
             '& .MuiTab-root': {
               textTransform: 'none',
               fontWeight: 600,
-              px: 3,
-              py: 1,
+             p:1.5,
               borderRadius: 1,
-              mr: 1,
-              backgroundColor: '#e5e7eb',
-              color: '#000',
+              
+              minHeight: '32px',
+              color: '#475569',
               '&.Mui-selected': {
                 backgroundColor: '#fff',
                 color: '#000',
-                boxShadow: '0px 1px 3px rgba(0,0,0,0.1)',
+                boxShadow: '0px 1px 2px rgba(0,0,0,0.1)',
               },
             },
           }}
@@ -72,7 +76,7 @@ const Editor = () => {
         </Tabs>
       </Box>
 
-     
+      {/* Tab Content Area */}
       <Box
         sx={{
           backgroundColor: tabIndex === 0 ? '#0f172a' : '#fff',
@@ -89,12 +93,12 @@ const Editor = () => {
         {tabIndex === 0 && (
           <>
             <DescriptionIcon sx={{ fontSize: 40, color: '#94a3b8', mb: 2 }} />
-            <Typography> Generated component code will appear here...</Typography>
+            <Typography>Generated component code will appear here...</Typography>
           </>
         )}
 
         {tabIndex === 1 && (
-          <Typography >  Component preview will appear here after generation...</Typography>
+          <Typography>Component preview will appear here after generation...</Typography>
         )}
 
         {tabIndex === 2 && (

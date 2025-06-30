@@ -31,7 +31,8 @@ const Home = () => {
           flexDirection: { xs: 'column', md: 'row' },
           px: { xs: 2, md: 3 },
           py: { xs: 2, md: 3 },
-          gap: { xs: 3, md: 4 },
+          gap: 2,
+    mt: { xs: 0, md: -1 }
         }}
       >
         {/* Sidebar Section */}
@@ -39,12 +40,16 @@ const Home = () => {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 2,
+        
+    mt: { xs: 0, md: -2},
+           
             width: { xs: '100%',  md: '480px' },
           }}
         >
           <Sidebar />
-          <Sidebar2 />
+            <Sidebar2 />
+       
+
         </Box>
 
         {/* Editor Section */}
@@ -53,6 +58,8 @@ const Home = () => {
             flex: 1,
             width: '100%',
             mt: { xs: 0, md: 5 },
+            gap: 2,
+    mt: { xs: 0, md: 2 }
           }}
         >
           <Editor />
