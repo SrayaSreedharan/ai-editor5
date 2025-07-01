@@ -5,10 +5,12 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 
 const Sidebar2 = () => {
-  const[css,setCss] = useState('');
-  const [colour, setColour] = useState('');
-  const [size, setSize] = useState('');
-  const [radius, setRadius] = useState('');
+ const [styleOptions, setStyleOptions] = useState({
+      framework: "Tailwind CSS",
+      colorScheme: "blue",
+      size: "medium",
+      rounded: "mediam",
+  });
   
 
 
@@ -31,7 +33,7 @@ const Sidebar2 = () => {
     <Box sx={{ minWidth: 120,mb: 2 }}>
       <FormControl fullWidth size='small'>
         <InputLabel id="demo-simple-select-label"></InputLabel>
-        CSS Framework<Select labelId="demo-simple-select-label" id="demo-simple-select" value={css} onChange={(e) => setCss(e.target.value)}>
+        CSS Framework<Select labelId="demo-simple-select-label" id="demo-simple-select"  value={styleOptions.framework} onChange={(e) => setStyleOptions({ ...styleOptions, framework: e.target.value })}>
           <MenuItem value="Tailwind CSS">Tailwind CSS</MenuItem>
           <MenuItem value="CSS Modules">CSS Modules</MenuItem>
           <MenuItem value="Styled Components">Styled Components</MenuItem>
@@ -42,7 +44,7 @@ const Sidebar2 = () => {
      <Box sx={{ minWidth: 120,mb: 2 }}>
       <FormControl fullWidth size='small'>
         <InputLabel id="demo-simple-select-label"></InputLabel>
-       Colour Scheme<Select labelId="demo-simple-select-label" id="demo-simple-select" value={colour} onChange={(e) => setColour(e.target.value)}>
+       Colour Scheme<Select labelId="demo-simple-select-label" id="demo-simple-select" value={styleOptions.colorScheme} onChange={(e) => setStyleOptions({ ...styleOptions, colorScheme: e.target.value })}>
           <MenuItem value="blue">Blue</MenuItem>
           <MenuItem value="purple">Purple</MenuItem>
           <MenuItem value="green">Green</MenuItem>
@@ -55,7 +57,7 @@ const Sidebar2 = () => {
      <Box sx={{ minWidth: 120,mb:2}} >
       <FormControl fullWidth size='small' >
         <InputLabel id="demo-simple-select-label"></InputLabel>
-        Component Size<Select labelId="demo-simple-select-label" id="demo-simple-select" value={size} onChange={(e) => setSize(e.target.value)}>
+        Component Size<Select labelId="demo-simple-select-label" id="demo-simple-select" value={styleOptions.size} onChange={(e) => setStyleOptions({ ...styleOptions, size: e.target.value })}>
           <MenuItem value='small'>Small</MenuItem>
           <MenuItem value="medium">Medium</MenuItem>
           <MenuItem value="large">Large</MenuItem>
@@ -66,7 +68,8 @@ const Sidebar2 = () => {
      <Box sx={{ minWidth: 120,mb:2,mt:2}}>
       <FormControl fullWidth size='small'>
         <InputLabel id="demo-simple-select-label"></InputLabel>
-        Border Radius<Select labelId="demo-simple-select-label" id="demo-simple-select" value={radius} onChange={(e) => setRadius(e.target.value)}>
+        Border Radius<Select labelId="demo-simple-select-label" id="demo-simple-select" value={styleOptions.rounded} onChange={(e) => setStyleOptions({ ...styleOptions, rounded: e.target.value })}
+        style={{ marginLeft: "10px" }}>
           <MenuItem value="none">None</MenuItem>
           <MenuItem value="small">Small</MenuItem>
           <MenuItem value="mediam">Medium</MenuItem>
