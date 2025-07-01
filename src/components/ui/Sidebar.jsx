@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Typography, TextField, Button, Paper, Stack, Box } from '@mui/material';
 import openRouterApi from '../../helper/openRouterApi';
 
-const Sidebar = () => {
+const Sidebar = ({ setGeneratedCode }) => {
   const [message, setMessage] = useState("");
 
   const list = [
@@ -13,9 +13,15 @@ const Sidebar = () => {
     "A product card with image, title, price, and add to cart button",
   ];
 
-  const buttonClick =() => {
-    openRouterApi(message)
+  const buttonClick = async () => {
+    const result = await openRouterApi(message); // <- should return { code: '...' }
+    if (result?.code) {
+      setGeneratedCode(result.code); // ✅ Send to Editor
+    } else {
+      alert("Failed to generate code");
+    }
   };
+  
 
   return (
     <Box px={2} py={4}>

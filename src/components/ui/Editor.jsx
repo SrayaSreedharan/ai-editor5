@@ -11,7 +11,7 @@ import { EDITOR_JS_TOOLS } from './Tool';
 const ReactEditorJS = createReactEditorJS();
 
 
-const Editor = () => {
+const Editor = ({ generatedCode }) => {
   const [tabIndex, setTabIndex] = useState(0);
 
   const handleTabChange = (event, newValue) => {
@@ -114,7 +114,7 @@ const Editor = () => {
         )}
 
         {tabIndex === 1 && (
-          <Typography>Component preview will appear here after generation...</Typography>
+          <Typography>{generatedCode || 'Component preview will appear here after generation...'}</Typography>
         )}
 
         {tabIndex === 2 && (
