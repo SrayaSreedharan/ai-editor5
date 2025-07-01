@@ -14,9 +14,9 @@ const Sidebar = ({ setGeneratedCode, styleOptions }) => {
   ];
 
   const buttonClick = async () => {
-    const result = await openRouterApi(message,styleOptions); // <- should return { code: '...' }
+    const result = await openRouterApi(message,styleOptions); 
     if (result?.code) {
-      setGeneratedCode(result.code); // ✅ Send to Editor
+      setGeneratedCode(result.code); 
     } else {
       alert("Failed to generate code");
     }

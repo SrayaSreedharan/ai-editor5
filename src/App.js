@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div style={{ display: 'flex', gap: '16px' }}>
-      {/* ✅ Make sure these props are passed */}
+     {/* props */}
       <Sidebar setGeneratedCode={setGeneratedCode} styleOptions={styleOptions} />
       <Sidebar2 styleOptions={styleOptions} setStyleOptions={setStyleOptions} />
       <Editor generatedCode={generatedCode} />
