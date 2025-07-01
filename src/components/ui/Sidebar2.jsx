@@ -9,7 +9,7 @@ const Sidebar2 = () => {
       framework: "Tailwind CSS",
       colorScheme: "blue",
       size: "medium",
-      rounded: "mediam",
+      rounded: "medium",
   });
   
 
@@ -72,7 +72,7 @@ const Sidebar2 = () => {
         style={{ marginLeft: "10px" }}>
           <MenuItem value="none">None</MenuItem>
           <MenuItem value="small">Small</MenuItem>
-          <MenuItem value="mediam">Medium</MenuItem>
+          <MenuItem value="medium">Medium</MenuItem>
           <MenuItem value="large">Large</MenuItem>
         </Select>
       </FormControl>

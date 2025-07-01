@@ -1,5 +1,5 @@
 // pages/Dashboard.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Box} from '@mui/material';
 import Sidebar from '../components/ui/Sidebar';
 import Sidebar2 from '../components/ui/Sidebar2';
@@ -8,6 +8,14 @@ import ButtonAppBar from '../components/ui/Navbar';
 import Footer from '../components/ui/Footer';
 
 const Home = () => {
+
+  const [generatedCode, setGeneratedCode] = useState('');
+  const [styleOptions, setStyleOptions] = useState({
+    framework: 'Tailwind CSS',
+    colorScheme: 'blue',
+    size: 'medium',
+    rounded: 'medium',
+  });
 
   return (
     <Box
@@ -40,8 +48,10 @@ const Home = () => {
             width: { xs: '100%',  md: '480px' },
           }}
         >
-          <Sidebar />
-          <Sidebar2 />
+          <Sidebar  setGeneratedCode={setGeneratedCode}
+            styleOptions={styleOptions}/>
+          <Sidebar2 styleOptions={styleOptions}
+            setStyleOptions={setStyleOptions} />
         </Box>
 
         <Box
@@ -52,7 +62,7 @@ const Home = () => {
             gap: 2,
           }}
         >
-          <Editor />
+          <Editor generatedCode={generatedCode}/>
         </Box>
       </Box>
 

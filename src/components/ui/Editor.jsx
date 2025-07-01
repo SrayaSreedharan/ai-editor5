@@ -13,10 +13,13 @@ const ReactEditorJS = createReactEditorJS();
 
 const Editor = ({ generatedCode }) => {
   const [tabIndex, setTabIndex] = useState(0);
+ 
 
   const handleTabChange = (event, newValue) => {
     setTabIndex(newValue);
   };
+
+
 
   return (
     <Box
@@ -96,7 +99,9 @@ const Editor = ({ generatedCode }) => {
         {tabIndex === 0 && (
           <ReactEditorJS
             tools={EDITOR_JS_TOOLS}
-           
+                    
+
+
             defaultValue={{
               time: new Date().getTime(),
               blocks: [

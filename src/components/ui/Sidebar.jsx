@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Typography, TextField, Button, Paper, Stack, Box } from '@mui/material';
 import openRouterApi from '../../helper/openRouterApi';
 
-const Sidebar = ({ setGeneratedCode }) => {
+const Sidebar = ({ setGeneratedCode, styleOptions }) => {
   const [message, setMessage] = useState("");
 
   const list = [
@@ -14,7 +14,7 @@ const Sidebar = ({ setGeneratedCode }) => {
   ];
 
   const buttonClick = async () => {
-    const result = await openRouterApi(message); // <- should return { code: '...' }
+    const result = await openRouterApi(message,styleOptions); // <- should return { code: '...' }
     if (result?.code) {
       setGeneratedCode(result.code); // ✅ Send to Editor
     } else {
