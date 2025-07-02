@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+AI Code Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an AI-powered code editor that allows users to generate, edit, and refine code using natural language prompts. 
 
-## Available Scripts
+✨ Features
+🧠 AI-Powered Code Generation
+Accepts plain English prompts and converts them into working code (React, JavaScript, HTML, etc.).
 
-In the project directory, you can run:
+✍️ Editor Interface with Editor.js
+Rich, block-based content editing powered by Editor.js.
 
-### `npm start`
+📦 Code Preview & Live Rendering
+Generated code can be previewed in real-time (optional feature).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔄 Edit / Refine via Prompts
+Users can modify existing code by typing natural language instructions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🧰 Tech Stack
 
-### `npm test`
+Frontend -	React, Material UI, Editor.js
+AI Backend- OpenRouter API (OpenAI/GPT models)
+Hosting -	Vercel 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📁 Project Structure
 
-### `npm run build`
+src/
+├── components/
+│   └── ui/
+│       ├── Editor.jsx
+│       ├── Footer.jsx
+│       ├── Navbar.jsx
+│       ├── Sidebar.jsx
+│       └── Sidebar2.jsx
+│
+├── helper/
+│   └── openRouterApi.js
+│
+├── pages/
+│   └── Home.jsx
+│
+├── App.css
+├── App.js
+├── App.test.js
+├── index.css
+├── index.js
+├── logo.svg
+├── reportWebVitals.js
+├── setupTests.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+⚙️ Setup Instructions
+📁 1. Create the Project (if not already created)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npx create-react-app ai-code-editor
+cd ai-code-editor
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🧱 2. Install Dependencies
 
-### `npm run eject`
+npm install @editorjs/editorjs @editorjs/code
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Optional (if using Axios):
+npm install axios
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🔐 3. Configure Environment Variables
+Create a .env file in the root directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+REACT_APP_OPENROUTER_API_KEY=your-openrouter-api-key
+You can get an API key from https://openrouter.ai
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🧠 4. Integrate OpenRouter API
+Create src/helper/openRouterApi.js and use fetch or axios to call the API with user prompts.
 
-## Learn More
+Example:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+import axios from 'axios';
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+export async function fetchCodeFromPrompt(prompt) {
+  const res = await axios.post(
+    'https://openrouter.ai/api/v1/chat/completions',
+    {
+      model: 'openai/gpt-4',
+      messages: [
+        { role: 'system', content: 'You are a helpful code assistant.' },
+        { role: 'user', content: prompt }
+      ]
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_OPENROUTER_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
 
-### Code Splitting
+  return res.data.choices[0].message.content;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+✍️ 5. Integrate Editor.js
+Editor setup example in Editor.jsx:
 
-### Analyzing the Bundle Size
+npm install @editorjs/editorjs @editorjs/code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+import EditorJS from '@editorjs/editorjs';
+import CodeTool from '@editorjs/code';
 
-### Making a Progressive Web App
+// Example initialization inside useEffect()
+const editor = new EditorJS({
+  holder: 'editorjs',
+  tools: { code: CodeTool },
+});
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+💻 6. Run the App
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm start
+Open your browser and go to: http://localhost:3000
