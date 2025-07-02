@@ -113,7 +113,8 @@ const Editor = ({ generatedCode }) => {
             {code && (
               <Button
                 size="small"
-                variant="outlined"
+            
+                
                 onClick={() => {
                   navigator.clipboard.writeText(code);
                   toast.success('Code copied!', {
@@ -124,6 +125,8 @@ const Editor = ({ generatedCode }) => {
                 sx={{
                   position: 'absolute',
                   top: 10,
+                  backgroundColor: '#ffffff',
+                  color:'black',
                   right: 10,
                   textTransform: 'none',
                   fontSize: '0.75rem',
@@ -135,7 +138,9 @@ const Editor = ({ generatedCode }) => {
           </Box>
         )}
         {tabIndex === 1 && (
+           <Box sx={{ px: 4}}>
           <Typography>{generatedCode || 'Component preview will appear here after generation...'}</Typography>
+          </Box>
         )}
         {tabIndex === 2 && (
           <Typography>Export functionality will be added here...</Typography>
