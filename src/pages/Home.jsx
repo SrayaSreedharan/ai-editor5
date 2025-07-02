@@ -6,6 +6,9 @@ import Sidebar2 from '../components/ui/Sidebar2';
 import Editor from '../components/ui/Editor';
 import ButtonAppBar from '../components/ui/Navbar';
 import Footer from '../components/ui/Footer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Home = () => {
 
@@ -52,6 +55,7 @@ const Home = () => {
             styleOptions={styleOptions}/>
           <Sidebar2 styleOptions={styleOptions}
             setStyleOptions={setStyleOptions} />
+            
         </Box>
 
         <Box
@@ -67,6 +71,7 @@ const Home = () => {
       </Box>
 
       <Footer />
+       <ToastContainer position="bottom-right" autoClose={3000} />
     </Box>
   );
 };

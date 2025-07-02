@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Typography, TextField, Button, Paper, Stack, Box } from '@mui/material';
 import openRouterApi from '../../helper/openRouterApi';
+import {  toast } from 'react-toastify';
+
+
+
 
 const Sidebar = ({ setGeneratedCode, styleOptions }) => {
   const [message, setMessage] = useState("");
@@ -17,8 +21,9 @@ const Sidebar = ({ setGeneratedCode, styleOptions }) => {
     const result = await openRouterApi(message,styleOptions); 
     if (result?.code) {
       setGeneratedCode(result.code); 
+      toast.success("Component generated successfully!");
     } else {
-      alert("Failed to generate code");
+      toast.error("Failed to generate code");
     }
   };
   
