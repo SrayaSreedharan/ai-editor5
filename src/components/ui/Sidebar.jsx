@@ -3,9 +3,6 @@ import { Typography, TextField, Button, Paper, Stack, Box } from '@mui/material'
 import openRouterApi from '../../helper/openRouterApi';
 import {  toast } from 'react-toastify';
 
-
-
-
 const Sidebar = ({ setGeneratedCode, styleOptions }) => {
   const [message, setMessage] = useState("");
 
@@ -27,7 +24,6 @@ const Sidebar = ({ setGeneratedCode, styleOptions }) => {
     }
   };
   
-
   return (
     <Box px={2} py={4}>
       <Paper

@@ -12,8 +12,6 @@ const Sidebar2 = () => {
       rounded: "medium",
   });
   
-
-
   return (
      <Box px={2} py={4} >
    <Paper
