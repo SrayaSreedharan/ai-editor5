@@ -1,25 +1,23 @@
-import React, { useState } from 'react';
-import { Box, Typography, Tabs, Tab } from '@mui/material';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import React, { useEffect, useState } from 'react';
+import { Box, Tabs, Tab, Typography, Button } from '@mui/material';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
-import { createReactEditorJS } from '../../helper/editors';
-import { EDITOR_JS_TOOLS } from './Tool';
-
-
-
-const ReactEditorJS = createReactEditorJS();
-
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+import { Editor as MonacoEditor } from '@monaco-editor/react';
+import { toast } from 'react-toastify';
 
 const Editor = ({ generatedCode }) => {
   const [tabIndex, setTabIndex] = useState(0);
- 
+  const [code, setCode] = useState(generatedCode || '');
 
-  const handleTabChange = (event, newValue) => {
-    setTabIndex(newValue);
-  };
+  useEffect(() => {
+    if (generatedCode) {
+      setTabIndex(0); // Switch to Editor when new code is generated
+      setCode(generatedCode); // Also update code state
+    }
+  }, [generatedCode]);
 
-
+  const handleTabChange = (e, newValue) => setTabIndex(newValue);
 
   return (
     <Box
@@ -29,8 +27,10 @@ const Editor = ({ generatedCode }) => {
         boxShadow: '0 0 0 1px #e5e7eb',
         backgroundColor: '#f9fafb',
         mr: 2,
+        minHeight: '500px',
       }}
     >
+      {/* Tabs */}
       <Box sx={{ p: 2, maxWidth: 'fit-content', mx: 2, mb: 1 }}>
         <Tabs
           value={tabIndex}
@@ -82,52 +82,65 @@ const Editor = ({ generatedCode }) => {
         </Tabs>
       </Box>
 
-      <Box
-        sx={{
-          backgroundColor: tabIndex === 0 ? '#0f172a' : '#fff',
-          color: tabIndex === 0 ? '#94a3b8' : '#6b7280',
-          p: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: 470,
-          borderTop: '1px solid #e5e7eb',
-          width: '100%',
-        }}
-      >
         {tabIndex === 0 && (
-          <ReactEditorJS
-            tools={EDITOR_JS_TOOLS}
-                    
-
-
-            defaultValue={{
-              time: new Date().getTime(),
-              blocks: [
-                {
-                  type: 'paragraph',
-                  data: { text: 'Start typing your code or content here...' },
-                },
-              ],
+          <Box
+            sx={{
+              width: '100%',
+              height: {
+                xs: '400px',
+                md: '600px',
+              },
+              maxWidth: {
+                md: '960px',
+              },
+              mx: 'auto',
+              position: 'relative',
             }}
-            onChange={async (api) => {
-              const data = await api.saver.save();
-              console.log('Editor Data:', data);
-            }}
-          />
+          >
+            <MonacoEditor
+              height="100%"
+              defaultLanguage="javascript"
+              theme="vs-dark"
+              value={code}
+              onChange={(value) => setCode(value)}
+              options={{
+                minimap: { enabled: false },
+                fontSize: 14,
+                scrollBeyondLastLine: false,
+                wordWrap: 'on',
+              }}
+            />
+            {code && (
+              <Button
+                size="small"
+                variant="outlined"
+                onClick={() => {
+                  navigator.clipboard.writeText(code);
+                  toast.success('Code copied!', {
+                    position: 'bottom-right',
+                    autoClose: 2000,
+                  });
+                }}
+                sx={{
+                  position: 'absolute',
+                  top: 10,
+                  right: 10,
+                  textTransform: 'none',
+                  fontSize: '0.75rem',
+                }}
+              >
+                📋 Copy
+              </Button>
+            )}
+          </Box>
         )}
-
         {tabIndex === 1 && (
           <Typography>{generatedCode || 'Component preview will appear here after generation...'}</Typography>
         )}
-
         {tabIndex === 2 && (
           <Typography>Export functionality will be added here...</Typography>
         )}
-      </Box>
-    </Box>
-  );
-};
-
+        </Box>
+        )
+  }
 export default Editor;
