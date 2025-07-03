@@ -5,6 +5,7 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import { Editor as MonacoEditor } from '@monaco-editor/react';
 import { toast } from 'react-toastify';
+import CodePreview from "@uiw/react-code-preview";
 
 const Editor = ({ generatedCode }) => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -12,8 +13,8 @@ const Editor = ({ generatedCode }) => {
 
   useEffect(() => {
     if (generatedCode) {
-      setTabIndex(0); // Switch to Editor when new code is generated
-      setCode(generatedCode); // Also update code state
+      setTabIndex(0); 
+      setCode(generatedCode); 
     }
   }, [generatedCode]);
 
@@ -30,7 +31,7 @@ const Editor = ({ generatedCode }) => {
         minHeight: '500px',
       }}
     >
-      {/* Tabs */}
+     
       <Box sx={{ p: 2, maxWidth: 'fit-content', mx: 2, mb: 1 }}>
         <Tabs
           value={tabIndex}
@@ -132,7 +133,7 @@ const Editor = ({ generatedCode }) => {
                   fontSize: '0.75rem',
                 }}
               >
-                📋 Copy
+                Copy
               </Button>
             )}
           </Box>

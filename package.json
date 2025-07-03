@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@codesandbox/sandpack-react": "^2.20.0",
     "@editorjs/editorjs": "^2.30.8",
     "@editorjs/embed": "^2.7.6",
     "@editorjs/header": "^2.8.8",
@@ -20,6 +21,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "@uiw/react-code-preview": "^5.2.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-editor-js": "^2.1.0",

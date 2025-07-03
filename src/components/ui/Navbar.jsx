@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Avatar from '@mui/material/Avatar';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import Tabs from '../Tabs';
 
 export default function ButtonAppBar() {
   return (
@@ -42,6 +43,7 @@ export default function ButtonAppBar() {
         {'<>'} React.js + AI
       </Button>
         </Toolbar>
+        <Tabs/>
       </AppBar>
     </Box>
   );
