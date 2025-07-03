@@ -5,7 +5,7 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import { Editor as MonacoEditor } from '@monaco-editor/react';
 import { toast } from 'react-toastify';
-import CodePreview from "@uiw/react-code-preview";
+
 
 const Editor = ({ generatedCode }) => {
   const [tabIndex, setTabIndex] = useState(0);
