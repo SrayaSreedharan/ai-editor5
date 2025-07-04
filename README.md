@@ -1,6 +1,6 @@
 #  AI Code Editor
 
-An AI-powered code editing platform built with React that lets users generate, edit, and preview code components through natural language prompts. It combines Monaco Editor, Sandpack, and MUI to provide a sleek, modern development experience.
+An AI-powered code editing platform built with React that lets users generate, edit, and preview code components through natural language prompts. It combines Monaco Editor,  and MUI to provide a sleek, modern development experience.
 
 ![React](https://img.shields.io/badge/React-18.2-blue?logo=react)
 ![Monaco Editor](https://img.shields.io/badge/Monaco-Editor-black?logo=visualstudiocode)
@@ -14,7 +14,6 @@ An AI-powered code editing platform built with React that lets users generate, e
 
 - 💬 AI-Powered code generation from natural language
 - ✍️ Monaco Editor with syntax highlighting
-- 👁️ Live Preview using Sandpack
 - 📦 Component structure with sidebar settings
 - 📤 Code export & clipboard copy
 - 🔄 Lazy loaded UI components for performance
@@ -28,7 +27,6 @@ An AI-powered code editing platform built with React that lets users generate, e
 - **React** – Frontend framework
 - **Monaco Editor** – Code editing experience (VS Code engine)
 - **Material UI (MUI)** – Component styling and layout
-- **Sandpack** – Live preview of editable JSX code
 
 ### Utilities
 
@@ -82,19 +80,14 @@ Open http://localhost:3000 in your browser.
   
   -Clipboard copy button with toast success feedback
 
-**2. Sandpack Preview**
-   
-  -Live rendering of React component code
-  
-  -Switch tabs between editor / preview / export
 
-**3. Lazy-Loaded Components**
+**2. Lazy-Loaded Components**
    
   -Footer, Sidebar, and Sidebar2 are lazily imported
   
   -Improves first load performance using React.lazy and Suspense
 
-**4. Custom Sidebar UI**
+**3. Custom Sidebar UI**
 
   -Input prompts for code generation
   
