@@ -1,10 +1,10 @@
-# 🧠 AI Code Editor
+# AI Code Editor
 
 A modern AI-powered code editor that allows users to generate, edit, and refine code using natural language prompts. Built with React, Editor.js, and OpenRouter API, this tool offers a seamless, interactive development experience with live preview support.
 
 ---
 
-## ✨ Features
+## Features
 
 - 💡 **AI Code Generation** — Converts natural language prompts into executable code (React, JavaScript, HTML, etc.)
 - 📝 **Block-Based Editing** — Rich text/code editing powered by Editor.js
@@ -14,7 +14,7 @@ A modern AI-powered code editor that allows users to generate, edit, and refine 
 
 ---
 
-## 🧱 Technology Stack
+## Technology Stack
 
 ### Core Technologies
 
@@ -27,7 +27,7 @@ A modern AI-powered code editor that allows users to generate, edit, and refine 
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 src/
 ├── components/
@@ -50,38 +50,37 @@ src/
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### 1. Create Project
-
 
 npx create-react-app ai-code-editor
 cd ai-code-editor
 
-##2.Install Dependencies
+## 2. Install Dependencies
 
 npm install @editorjs/editorjs @editorjs/code
 
-##3. Set Environment Variable
-Create a .env file in the root:
 
+## 3. Set Environment Variable
+
+Create a `.env` file in the root:
 
 REACT_APP_OPENROUTER_API_KEY=your-openrouter-api-key
 
-##4. Run Locally
+## 4. Run Locally
 
 npm start
+
 Then open your browser at http://localhost:3000
 
-##Challenges Solved
+## Challenges Solved
 
-Integrated AI with real-time, editable UI
+- Integrated **AI with real-time, editable UI**
+- Managed **state synchronization** between code output and visual editor
+- Designed a **seamless feedback loop** between natural language prompts and code generation
+- Handled **Editor.js integration** within a modular React architecture
 
-Managed state sync between code and visual editor
-
-Designed a seamless feedback loop between user prompts and generated code
-
-Handled Editor.js integration within a dynamic React app
 
 
 
