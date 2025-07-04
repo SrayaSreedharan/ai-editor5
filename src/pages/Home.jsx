@@ -1,16 +1,10 @@
 import React, { lazy, Suspense, useState } from 'react';
 import { Box} from '@mui/material';
-// import Sidebar from '../components/ui/Sidebar';
-// import Sidebar2 from '../components/ui/Sidebar2';
 import Editor from '../components/ui/Editor';
 import ButtonAppBar from '../components/ui/Navbar';
-// import Footer from '../components/ui/Footer';
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import Loading from '../components/ui/Loading';
-
 
 const Footer = lazy(()=> import ('../components/ui/Footer'))
 const Sidebar2 = lazy(()=> import ('../components/ui/Sidebar2'))

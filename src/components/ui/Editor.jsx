@@ -6,7 +6,6 @@ import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import { Editor as MonacoEditor } from '@monaco-editor/react';
 import { toast } from 'react-toastify';
 
-
 const Editor = ({ generatedCode }) => {
   const [tabIndex, setTabIndex] = useState(0);
   const [code, setCode] = useState(generatedCode || '');
@@ -138,14 +137,19 @@ const Editor = ({ generatedCode }) => {
             )}
           </Box>
         )}
-        {tabIndex === 1 && (
-           <Box sx={{ px: 4}}>
-          <Typography>{generatedCode || 'Component preview will appear here after generation...'}</Typography>
-          </Box>
+
+        <Box sx={{  mx: 4}}>
+       {tabIndex === 1 && (
+          <Typography>{generatedCode}Component preview will appear here after generation...</Typography>
         )}
+        </Box>
+
+        <Box sx={{  mx: 4}}>
         {tabIndex === 2 && (
           <Typography>Export functionality will be added here...</Typography>
         )}
+        </Box>
+
         </Box>
         )
   }
