@@ -23,7 +23,7 @@ const openRouterApi = async (message,styleOptions  = {})=>{
    
         method: 'POST',
     headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer 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`,
         // 'HTTP-Referer': '<YOUR_SITE_URL>', // Optional. Site URL for rankings on openrouter.ai.
         // 'X-Title': '<YOUR_SITE_NAME>', // Optional. Site title for rankings on openrouter.ai.
         'Content-Type': 'application/json',
