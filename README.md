@@ -1,123 +1,90 @@
-#  AI Code Editor
 
-<<<<<<< HEAD
-An AI-powered code editing platform built with React that lets users generate, edit, and preview code components through natural language prompts. It combines Monaco Editor,  and MUI to provide a sleek, modern development experience.
-=======
-An AI-powered code editing platform built with React that lets users generate, edit, and preview code components through natural language prompts. It combines Monaco Editor, Sandpack, and MUI to provide a sleek, modern development experience.
->>>>>>> 8157559 (test)
+Ai code editor
 
-![React](https://img.shields.io/badge/React-18.2-blue?logo=react)
-![Monaco Editor](https://img.shields.io/badge/Monaco-Editor-black?logo=visualstudiocode)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38bdf8?logo=tailwindcss)
-![MUI](https://img.shields.io/badge/MUI-Component-007FFF?logo=mui)
-![MIT License](https://img.shields.io/badge/License-MIT-green)
+This project is an AI- code editor that allows users to generate, edit, and refine code through natural language prompts.
 
----
 
-## Features
+ Features
 
-- 💬 AI-Powered code generation from natural language
-- ✍️ Monaco Editor with syntax highlighting
-<<<<<<< HEAD
-=======
-- 👁️ Live Preview using Sandpack
->>>>>>> 8157559 (test)
-- 📦 Component structure with sidebar settings
-- 📤 Code export & clipboard copy
-- 🔄 Lazy loaded UI components for performance
+🧠 AI-Powered Code Generation
 
----
+Accepts plain English prompts and converts them into working code (React, JavaScript, HTML, etc.)
 
-##  Tech Stack
 
-### Core Libraries
+✍️ Editor Interface with Editor.js
 
-- **React** – Frontend framework
-- **Monaco Editor** – Code editing experience (VS Code engine)
-- **Material UI (MUI)** – Component styling and layout
-<<<<<<< HEAD
-=======
-- **Sandpack** – Live preview of editable JSX code
->>>>>>> 8157559 (test)
+Rich, block-based content editing.
 
-### Utilities
+📦 Code Preview & Live Rendering
 
-- **React Toastify** – Toast notifications
-- **React Suspense** – Lazy loading UI components
-- **React Icons & MUI Icons** – Iconography
+Display generated code in a live preview pane (for web code).
 
----
+🔄 Edit / Refine via Prompts
 
-##  Project Structure
+Users can modify existing code by typing instructions 
+
+Tech Stack
+
+Frontend - React, Material ui, Editor.js
+AI Backend - OpenRouter API (OpenAI/GPT models)
+Hosting  -	Vercel / Netlify (optional)
+
+
+project Structure
 
 src/
 ├── components/
-│ └── ui/
-│ ├── Editor.jsx
-│ ├── Sidebar.jsx
-│ ├── Sidebar2.jsx
-│ ├── Footer.jsx
-│ └── Navbar.jsx
+│   └── ui/
+│       ├── Editor.jsx
+│       ├── Footer.jsx
+│       ├── Navbar.jsx
+│       ├── Sidebar.jsx
+│       └── Sidebar2.jsx
+│
+├── helper/
+│   └── openRouterApi.js
+│
 ├── pages/
-│ └── Dashboard.jsx
+│   └── Home.jsx
+│
+├── App.css
 ├── App.js
-└── index.js
-
----
-
-## Setup Instructions
-
-**1. Clone the repo**
-
-    git clone https://github.com/SrayaSreedharan/ai-editor5.git
-    cd ai-editor5
-
-**2. Install dependencies**
-
-    npm install
-
-**3. Start development server**
-
-    npm start
-    
-Open http://localhost:3000 in your browser.
-
-## Key Technical Highlights
-
-**1. Monaco Editor**
-   
-  -Full-featured code editor inside your app
-  
-  -Supports syntax highlighting and code wrapping
-  
-  -Clipboard copy button with toast success feedback
-
-<<<<<<< HEAD
-
-**2. Lazy-Loaded Components**
-=======
-**2. Sandpack Preview**
-   
-  -Live rendering of React component code
-  
-  -Switch tabs between editor / preview / export
-
-**3. Lazy-Loaded Components**
->>>>>>> 8157559 (test)
-   
-  -Footer, Sidebar, and Sidebar2 are lazily imported
-  
-  -Improves first load performance using React.lazy and Suspense
-
-<<<<<<< HEAD
-**3. Custom Sidebar UI**
-=======
-**4. Custom Sidebar UI**
->>>>>>> 8157559 (test)
-
-  -Input prompts for code generation
-  
-  -Styling options (framework, size, color, rounded)
+├── App.test.js
+├── index.css
+├── index.js
+├── logo.svg
+├── reportWebVitals.js
+├── setupTests.js
 
 
+
+Setup Instructions
+📁1. Create Your Project (if not already created)
+
+npx create-react-app ai-code-editor
+cd ai-code-editor
+
+🧱 2. Install Dependencies
+
+npm install @editorjs/editorjs @editorjs/code
+
+
+🔐 3. Configure Environment Variables
+Create a .env file in the root folder:
+
+REACT_APP_OPENROUTER_API_KEY=your-openrouter-api-key
+
+4. Integrate OpenRouter API
+
+If you're using fetch or axios in your code generation logic, 
+
+🧱 5. Integrate Editor.js
+
+npm install --save @editorjs/editorjs @editorjs/code
+
+💻 6. Run the App
+
+npm start
+
+Access the application Open http://localhost:3000 in your browser
 
