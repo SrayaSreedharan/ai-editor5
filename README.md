@@ -1,36 +1,36 @@
+AI Code Editor
 
-Ai code editor
+A modern AI-powered code editor that allows users to generate, edit, and refine code using natural language prompts. Built with React, Editor.js, and OpenRouter API, this tool offers a seamless, interactive development experience with live preview support.
 
-This project is an AI- code editor that allows users to generate, edit, and refine code through natural language prompts.
+Features
 
+💡 AI Code Generation — Converts natural language prompts into executable code (React, JavaScript, HTML, etc.)
 
- Features
+📝 Block-Based Editing — Rich text/code editing powered by Editor.js
 
-🧠 AI-Powered Code Generation
+🔁 Prompt-Based Code Refinement — Update or modify existing code via follow-up prompts
 
-Accepts plain English prompts and converts them into working code (React, JavaScript, HTML, etc.)
+🔍 Live Code Preview — Instantly render and test generated web code
 
+⚡ Lightweight & Responsive UI — Built with Material UI for clean interface
 
-✍️ Editor Interface with Editor.js
+Technology Stack
 
-Rich, block-based content editing.
+Core Technologies
 
-📦 Code Preview & Live Rendering
+React.js – Frontend framework
 
-Display generated code in a live preview pane (for web code).
+Material UI – Component library for styling
 
-🔄 Edit / Refine via Prompts
+Editor.js – Block-style content editor
 
-Users can modify existing code by typing instructions 
+OpenRouter API – AI backend for prompt-to-code generation
 
-Tech Stack
+JavaScript (ES6+) – Core scripting
 
-Frontend - React, Material ui, Editor.js
-AI Backend - OpenRouter API (OpenAI/GPT models)
-Hosting  -	Vercel / Netlify (optional)
+Vercel – Deployment 
 
-
-project Structure
+Folder Structure
 
 src/
 ├── components/
@@ -40,51 +40,44 @@ src/
 │       ├── Navbar.jsx
 │       ├── Sidebar.jsx
 │       └── Sidebar2.jsx
-│
 ├── helper/
 │   └── openRouterApi.js
-│
 ├── pages/
 │   └── Home.jsx
-│
-├── App.css
 ├── App.js
-├── App.test.js
-├── index.css
 ├── index.js
-├── logo.svg
-├── reportWebVitals.js
-├── setupTests.js
+├── App.css
+├── index.css
 
+Getting Started
 
-
-Setup Instructions
-📁1. Create Your Project (if not already created)
+1. Create Project
 
 npx create-react-app ai-code-editor
 cd ai-code-editor
 
-🧱 2. Install Dependencies
+2. Install Dependencies
 
 npm install @editorjs/editorjs @editorjs/code
 
+3. Set Environment Variable
+Create a .env file in the root:
 
-🔐 3. Configure Environment Variables
-Create a .env file in the root folder:
 
 REACT_APP_OPENROUTER_API_KEY=your-openrouter-api-key
 
-4. Integrate OpenRouter API
-
-If you're using fetch or axios in your code generation logic, 
-
-🧱 5. Integrate Editor.js
-
-npm install --save @editorjs/editorjs @editorjs/code
-
-💻 6. Run the App
+4. Run Locally
 
 npm start
+Open your browser at http://localhost:3000
 
-Access the application Open http://localhost:3000 in your browser
+Challenges Solved
+
+Integrated AI with real-time, editable UI
+
+Managed state sync between code and visual editor
+
+Designed a seamless feedback loop between user prompts and generated code
+
+Handled Editor.js integration within a dynamic React app
 
