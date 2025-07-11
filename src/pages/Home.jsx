@@ -14,7 +14,6 @@ import {
 } from '@mui/material';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 
-// Lazy-loaded components
 const Footer = lazy(() => import('../components/ui/Footer'));
 const Sidebar = lazy(() => import('../components/ui/Sidebar'));
 const Sidebar2 = lazy(() => import('../components/ui/Sidebar2'));
