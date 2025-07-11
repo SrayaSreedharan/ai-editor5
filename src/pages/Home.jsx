@@ -92,8 +92,6 @@ const Home = () => {
           <Editor generatedCode={generatedCode} />
         </Box>
       </Box>
-
-      {/* Warning Dialog */}
       <Dialog
         open={openWarning}
         onClose={() => setOpenWarning(false)}
