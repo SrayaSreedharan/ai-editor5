@@ -14,14 +14,6 @@ const Warningmessage = () => {
 
   useEffect(() => {
     setOpen(true);
-    // Optional: Show only once per session
-    // const hasSeen = localStorage.getItem('aiWarningSeen');
-    // if (!hasSeen) {
-    //   setOpen(true);
-    //   localStorage.setItem('aiWarningSeen', 'true');
-    // } else {
-    //   setOpen(false);
-    // }
   }, []);
 
   const handleClose = () => setOpen(false);
