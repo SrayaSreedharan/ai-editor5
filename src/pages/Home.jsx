@@ -33,14 +33,6 @@ const Home = () => {
 
   useEffect(() => {
     setOpenWarning(true);
-    // Optional: only show once per session
-    // const seen = localStorage.getItem('aiWarningSeen');
-    // if (!seen) {
-    //   setOpenWarning(true);
-    //   localStorage.setItem('aiWarningSeen', 'true');
-    // } else {
-    //   setOpenWarning(false);
-    // }
   }, []);
 
   return (
