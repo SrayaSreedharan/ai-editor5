@@ -56,8 +56,7 @@ const Home = () => {
       <Suspense fallback={<Loading type="ButtonAppBar" />}>
         <ButtonAppBar />
       </Suspense>
-
-      {/* Main content area */}
+      
       <Box
         sx={{
           flex: 1,
