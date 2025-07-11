@@ -69,7 +69,7 @@ const Home = () => {
           mt: { xs: 0, md: -1 },
         }}
       >
-        {/* Sidebars */}
+       
         <Box
           sx={{
             display: 'flex',
