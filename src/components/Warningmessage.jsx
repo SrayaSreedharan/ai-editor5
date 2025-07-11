@@ -26,7 +26,7 @@ const Warningmessage = () => {
       maxWidth="sm"
       fullWidth
       PaperProps={{
-        sx: { borderRadius: 3, boxShadow: 8 }
+        sx: { borderRadius: 3, boxShadow: 8 },
       }}
     >
       <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -48,14 +48,14 @@ const Warningmessage = () => {
           variant="contained"
           fullWidth
           sx={{
-            background: 'linear-gradient(to right, #0ea5e9, #6366f1)',
+            backgroundColor: '#4f46e5', 
             color: '#fff',
             '&:hover': {
-              background: 'linear-gradient(to right, #0284c7, #4f46e5)',
+              backgroundColor: '#4338ca',
             },
             textTransform: 'none',
             fontWeight: 600,
-            py: 1.5
+            py: 1.5,
           }}
         >
           Continue
