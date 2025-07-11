@@ -123,8 +123,6 @@ const Home = () => {
           </Button>
         </DialogActions>
       </Dialog>
-
-      {/* Footer */}
       <Suspense fallback={<Loading type="Footer" />}>
         <Footer />
       </Suspense>
