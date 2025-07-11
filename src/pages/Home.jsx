@@ -86,8 +86,6 @@ const Home = () => {
             <Sidebar2 styleOptions={styleOptions} setStyleOptions={setStyleOptions} />
           </Suspense>
         </Box>
-
-        {/* Editor */}
         <Box sx={{ flex: 1, width: '100%', mt: { xs: 0, md: 2 }, gap: 2 }}>
           <Editor generatedCode={generatedCode} />
         </Box>
