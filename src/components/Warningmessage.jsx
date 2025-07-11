@@ -45,7 +45,8 @@ const Warningmessage = () => {
         <Button
           onClick={handleClose}
           variant="contained"
-          color="primary"
+         sx={{
+            background: 'linear-gradient(to right, #4f46e5, #9333ea)'}}
           fullWidth
         >
           Continue
