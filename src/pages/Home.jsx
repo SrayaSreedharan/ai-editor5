@@ -28,7 +28,6 @@ const Home = () => {
     rounded: 'medium',
   });
 
-  // Modal warning state
   const [openWarning, setOpenWarning] = useState(true);
 
   useEffect(() => {
