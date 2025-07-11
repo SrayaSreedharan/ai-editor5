@@ -52,11 +52,11 @@ const Home = () => {
         backgroundColor: '#f9fafb',
       }}
     >
-      {/* Navbar */}
+  
       <Suspense fallback={<Loading type="ButtonAppBar" />}>
         <ButtonAppBar />
       </Suspense>
-      
+
       <Box
         sx={{
           flex: 1,
